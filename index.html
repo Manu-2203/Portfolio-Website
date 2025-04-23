@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images\logo.jpg" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About </a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="hero">
+                <p>If it works, I meant it.</p>
+                <h1>Hi, I'm <span>Manuhya</span></h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="container"></div>
+        <div class="row">
+            <div class="about-column1">
+                <img src="images/user.jpg">
+            </div>
+            <div class="about-column2">
+                <h1 class="subtitle">About Me</h1>
+                <br>
+                <p> Hi, I’m Manuhya – a passionate creator and problem-solver, driven by the challenge of turning complex ideas into seamless, innovative solutions. From building dynamic web applications to exploring the world of AI, I thrive on tackling diverse tech challenges and pushing the boundaries of what’s possible. Always learning, always experimenting, I’m ready to bring your vision to life in exciting new ways.</p>
+                <br>
+                <div class="tabtitles">
+                    <p class="tab-links active" onclick="opentab('Skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('Education')">Education</p>
+                </div><br>
+                <div class="tabcontents active" id="Skills">
+                    <ul>
+                        <li><span>Front-End Developer</span><br>Designing Web App Interfaces</li>
+                        <li><span>AI Integration</span><br>Designing user experiences that make complex AI interactions simple and human-friendly</li>
+                        <li><span>Machine Learning Engineer</span><br>Developing and deploying lightweight ML models for real-time inference in user-facing apps</li>
+                    </ul>
+                </div>
+                <div class="tabcontents" id="Experience">
+                    <ul>
+                        <li><span>2025-Current</span><br>React Developer</li>
+                        <li><span>2023-2024</span><br>AI/ML Intern</li>
+                    </ul>
+                </div>
+                <div class="tabcontents" id="Education">
+                    <ul>
+                        <li><span>2021-2025</span><br>B.Tech CS from VIT Chennai</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- -------------------portfolio----------------- -->
+ <div id="portfolio">
+     <div class="container">
+        <h1 class="subtitle">My Work</h1>
+        <div class="worklist">
+            <div class="work">
+                <img src="images/work1.jpg">
+                <div class="layer">
+                    <h3>News Grid</h3>
+                    <p>
+                        Developed a responsive news grid website with HTML, CSS, and Javascript for a dynamic frontend and PHP/MySQL for backend data handling. Features include multimedia content and interactive elements to optimize user engagement. 
+                    </p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work2.jpg">
+                <div class="layer">
+                    <h3>Speech to Image Generation</h3>
+                    <p>
+                        A speech-to-image system combining Whisper for transcribing spoken language into text and Janus 7B for generating semantically rich images from that text. Fine-tuned on educational data, it enables hands-free visual content creation for learning and storytelling. 
+                    </p>
+                    <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+     </div>
+ </div>
+
+
+
+ <!-- --------------contact-------------- -->
+  <div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contactleft">
+                <h1 class="subtitle">Contact Me</h1>
+                <p> <i class="fa-solid fa-paper-plane"></i>   manuhyareddy@gmail.com</p>
+                <p> <i class="fa-solid fa-phone"></i>  +91 9492885758</p>
+                <div class="social">
+                    <a href="https://www.instagram.com/mxnuhya/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/manuhya-reddy-76ab14220/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Manu-2203"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <a href="/Resume-Manuhya2025.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contactright">
+               <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Let me know how i can help you."></textarea>
+                <button type ="submit" class="btn btn2">Send</button> 
+               </form>
+               <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+  </div>
+    <script>
+        var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tabcontents");
+
+        function opentab(tabname){
+           for(tablink of tablinks){
+            tablink.classList.remove("active");
+           }
+           for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active");
+           }
+           event.currentTarget.classList.add("active");
+           document.getElementById(tabname).classList.add("active");
+        }
+    </script>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu(){
+            sidemenu.style.right="-200px";
+        }
+    </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzT48hoE5mspBCRBinSt3uu-PpJ3dgMI7zMLxzy6l67_yfygdkAGWx_Hy0UrpsOLcMiNQ/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg");
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML="Message Sent successfully!"
+            setTimeout(function(){
+                msg.innerHTML="";
+            },3000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
